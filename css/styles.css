@@ -483,6 +483,54 @@ a.footer-logo {
 .footer-media {
   margin-left: 86px;
 }
+
+/* ----------------------------------------------------- МОДАЛЬНОЕ ОКНО---------------------------------------------------------- */
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms, visibility 250ms;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  width: 528px;
+  min-height: 581px;
+  background-color: var(--third-color--);
+  transition: transform 250ms;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+  background-color: var(--third-color--);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.5);
+}
 /* ----------------------------------------------------- ПОРТФОЛИО ФИЛЬТР---------------------------------------------------------- */
 
 .portfolio {
